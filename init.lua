@@ -1,5 +1,15 @@
 vim.g.mapleader = " "
 
+if true then
+  local nvim_venv_path = "/home/hangildin/.pyenv/versions/nvim_venv"
+  if vim.loop.fs_stat(nvim_venv_path) then
+    vim.env.PYENV_VERSION = "nvim_venv"
+    vim.env.PYENV_ACTIVATE_SHELL = 1
+    vim.env.PYENV_VIRTUAL_ENV = "/home/hangildin/.pyenv/versions/3.8.9/envs/nvim_venv"
+    vim.env.VIRTUAL_ENV = "/home/hangildin/.pyenv/versions/3.8.9/envs/nvim_venv"
+  end
+end
+
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
