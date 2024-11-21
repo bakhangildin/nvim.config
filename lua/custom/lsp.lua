@@ -5,11 +5,15 @@ local conform = require("conform")
 conform.setup {
   formatters_by_ft = {
     go = { "goimports" },
-    python = { "isort", "autopep8" },
+
+    templ = { "templ" },
+
     javascript = { "prettierd" },
     typescript = { "prettierd" },
     javascriptreact = { "prettierd" },
     typescriptreact = { "prettierd" },
+
+    python = { "isort", "autopep8" },
   }
 }
 
@@ -56,9 +60,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
---[[
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {}),
+  group = vim.api.nvim_create_augroup("TsOnSaveGroup", {}),
   pattern = { "*.ts", "*.tsx" },
   callback = function(args)
     vim.lsp.buf.execute_command {
@@ -68,7 +71,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     }
   end,
 })
-]]
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {}),
@@ -82,15 +84,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 require("mason-tool-installer").setup {
   ensure_installed = {
-    { "lua-language-server", version = "3.13.0" },
+    { "lua-language-server",         version = "3.13.0" },
 
-    { "goimports",           version = "v0.27.0" },
+    { "gopls",                       version = "v0.16.2" },
+    { "goimports",                   version = "v0.27.0" },
 
-    { "prettierd",           version = "0.25.4" },
+    { "templ",                       version = "v0.2.793" },
 
-    { "basedpyright",        version = "1.12.3" },
-    { "isort",               version = "5.13.2" },
-    { "autopep8",            version = "2.3.1" },
+    { "html-lsp",                    version = "4.10.0" },
+    { "emmet-language-server",       version = "2.6.0" },
+    { "tailwindcss-language-server", version = "0.0.27" },
+    { "htmx-lsp",                    version = "0.1.0" },
+
+    { "typescript-language-server",  version = "4.3.3" },
+    { "prettierd",                   version = "0.25.4" },
+
+    { "basedpyright",                version = "1.12.3" },
+    { "isort",                       version = "5.13.2" },
+    { "autopep8",                    version = "2.3.1" },
   },
   auto_update = false,
 }
@@ -98,4 +109,18 @@ require("mason-tool-installer").setup {
 local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup {}
+
+lspconfig.gopls.setup {}
+
+lspconfig.templ.setup {}
+
+lspconfig.html.setup {}
+lspconfig.emmet_language_server.setup {
+  filetypes = { "templ" },
+}
+lspconfig.tailwindcss.setup {}
+lspconfig.htmx.setup {}
+
+lspconfig.ts_ls.setup {}
+
 lspconfig.basedpyright.setup {}
