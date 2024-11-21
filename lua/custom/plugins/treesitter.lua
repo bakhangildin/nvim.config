@@ -8,6 +8,7 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
+      do return end
       require("nvim-treesitter.configs").setup {
         auto_install = false,
         ensure_installed = {
