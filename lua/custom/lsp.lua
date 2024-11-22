@@ -6,7 +6,7 @@ conform.setup {
   formatters_by_ft = {
     go = { "goimports" },
 
-    templ = { "templ" },
+    templ = { "prettierd", "templ" },
 
     javascript = { "prettierd" },
     typescript = { "prettierd" },

@@ -13,7 +13,6 @@ return {
         auto_install = false,
         ensure_installed = {
           "lua",
-          "templ",
           "query",
         },
         ignore_install = {},
@@ -21,6 +20,7 @@ return {
         sync_install = false,
         highlight = {
           enable = true,
+          additional_vim_regex_highlighting = false,
           disable = {
             "lua",
             "vimdoc",
