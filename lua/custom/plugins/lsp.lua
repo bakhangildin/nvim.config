@@ -11,7 +11,7 @@ return {
       { "williamboman/mason-lspconfig.nvim",         tag = "v1.31.0" },
       { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "c5e07b8" },
 
-      -- "b0o/SchemaStore.nvim",
+      { "b0o/SchemaStore.nvim",                      commit = "bbd005a" },
       --"j-hui/fidget.nvim",
     },
     config = function()

@@ -102,25 +102,57 @@ require("mason-tool-installer").setup {
     { "basedpyright",                version = "1.12.3" },
     { "isort",                       version = "5.13.2" },
     { "autopep8",                    version = "2.3.1" },
+
+    { "jsonls",                      version = "4.10.0" }
   },
   auto_update = false,
 }
 
 local lspconfig = require("lspconfig")
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.lua_ls.setup {}
-
-lspconfig.gopls.setup {}
-
-lspconfig.templ.setup {}
-
-lspconfig.html.setup {}
-lspconfig.emmet_language_server.setup {
-  filetypes = { "templ" },
+lspconfig.lua_ls.setup {
+  capabilities = capabilities,
 }
-lspconfig.tailwindcss.setup {}
-lspconfig.htmx.setup {}
 
-lspconfig.ts_ls.setup {}
+lspconfig.gopls.setup {
+  capabilities = capabilities,
+}
 
-lspconfig.basedpyright.setup {}
+lspconfig.templ.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.emmet_language_server.setup {
+  capabilities = capabilities,
+  filetypes = vim.list_extend(require("lspconfig.server_configurations.emmet_language_server").default_config.filetypes, { "templ" }),
+}
+lspconfig.tailwindcss.setup {
+  capabilities = capabilities,
+}
+lspconfig.htmx.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.ts_ls.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.basedpyright.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.jsonls.setup {
+  capabilities = capabilities,
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
