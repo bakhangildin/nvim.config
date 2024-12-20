@@ -103,7 +103,9 @@ require("mason-tool-installer").setup {
     { "isort",                       version = "5.13.2" },
     { "autopep8",                    version = "2.3.1" },
 
-    { "jsonls",                      version = "4.10.0" }
+    { "jsonls",                      version = "4.10.0" },
+
+    { "clangd",                      version = "19.1.2" },
   },
   auto_update = false,
 }
@@ -155,4 +157,8 @@ lspconfig.jsonls.setup {
       validate = { enable = true },
     },
   },
+}
+
+lspconfig.clangd.setup {
+  capabilities = capabilities,
 }
