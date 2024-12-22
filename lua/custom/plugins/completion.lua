@@ -50,7 +50,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       formatting = {
         format = lspkind.cmp_format({
-          mode = "text",
+          mode = "text_symbol",
         }),
       },
     })
