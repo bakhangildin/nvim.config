@@ -13,6 +13,8 @@ conform.setup {
     javascriptreact = { "prettierd" },
     typescriptreact = { "prettierd" },
 
+    markdown = { "prettierd" },
+
     python = { "isort", "autopep8" },
   }
 }
