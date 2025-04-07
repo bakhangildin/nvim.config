@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "cd2acc",
+    enabled = false,
     dependencies = {
       'nvim-treesitter/playground',
       "vrischmann/tree-sitter-templ",
