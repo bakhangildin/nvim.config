@@ -63,18 +63,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = vim.api.nvim_create_augroup("TsOnSaveGroup", {}),
-  pattern = { "*.ts", "*.tsx" },
-  callback = function(args)
-    vim.lsp.buf.execute_command {
-      command = "_typescript.organizeImports",
-      title = "",
-      arguments = { args.match },
-    }
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("FormatOnSaveGroup", {}),
   callback = function()
     conform.format {
