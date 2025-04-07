@@ -18,17 +18,43 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
+    enabled = false,
     config = function()
       require("tokyonight").setup({
-        style = "storm",
-        transparent = true,
+        style = "night",
+        transparent = false,
         terminal_colors = true,
         styles = {
           comments = { italic = false },
           keywords = { italic = false },
         },
+        on_colors = function(colors)
+          colors["bg"] = "#04051a"
+        end
       })
-      vim.cmd([[colorscheme tokyonight]])
+      -- vim.cmd([[colorscheme tokyonight]])
     end,
   },
+  {
+    "blazkowolf/gruber-darker.nvim",
+    config = function()
+      require("gruber-darker").setup({
+        bold = false,
+        invert = {
+          signs = false,
+          tabline = false,
+          visual = false,
+        },
+        italic = {
+          strings = false,
+          comments = false,
+          operators = false,
+          folds = true,
+        },
+        undercurl = true,
+        underline = true,
+      })
+      vim.cmd([[colorscheme gruber-darker]])
+    end,
+  }
 }
