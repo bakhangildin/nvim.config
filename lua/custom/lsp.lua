@@ -139,9 +139,9 @@ lspconfig.emmet_language_server.setup {
 lspconfig.tailwindcss.setup {
   capabilities = capabilities,
 }
-lspconfig.htmx.setup {
-  capabilities = capabilities,
-}
+-- lspconfig.htmx.setup {
+--   capabilities = capabilities,
+-- }
 
 lspconfig.ts_ls.setup {
   capabilities = capabilities,
