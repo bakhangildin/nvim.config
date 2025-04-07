@@ -15,7 +15,7 @@ conform.setup {
 
     markdown = { "prettierd" },
 
-    python = { "isort", "autopep8" },
+    python = { "isort", "autopep8", timeout_ms = 2000 },
   }
 }
 
