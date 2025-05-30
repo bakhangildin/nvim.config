@@ -123,6 +123,12 @@ lspconfig.html.setup {
 lspconfig.emmet_language_server.setup {
   capabilities = capabilities,
   filetypes = vim.list_extend(require("lspconfig.server_configurations.emmet_language_server").default_config.filetypes, { "templ" }),
+  init_options = {
+    includeLanguages = {
+      javascriptreact = "html",
+      typescriptreact = "html",
+    },
+  },
 }
 lspconfig.tailwindcss.setup {
   capabilities = capabilities,
