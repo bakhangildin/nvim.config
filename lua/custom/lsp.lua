@@ -79,7 +79,7 @@ require("mason-tool-installer").setup {
     { "gopls",                       version = "v0.16.2" },
     { "goimports",                   version = "v0.27.0" },
 
-    { "templ",                       version = "v0.2.793" },
+    -- { "templ",                       version = "v0.2.793" },
 
     -- { "html-lsp",                    version = "4.10.0" },
     { "emmet-language-server",       version = "2.6.0" },
