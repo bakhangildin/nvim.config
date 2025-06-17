@@ -84,7 +84,7 @@ require("mason-tool-installer").setup {
     -- { "html-lsp",                    version = "4.10.0" },
     { "emmet-language-server",       version = "2.6.0" },
     { "tailwindcss-language-server", version = "0.0.27" },
-    { "htmx-lsp",                    version = "0.1.0" },
+    -- { "htmx-lsp",                    version = "0.1.0" },
 
     { "typescript-language-server",  version = "4.3.3" },
     { "prettierd",                   version = "0.25.4" },
