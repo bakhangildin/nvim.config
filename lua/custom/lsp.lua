@@ -139,6 +139,11 @@ lspconfig.tailwindcss.setup {
 
 lspconfig.ts_ls.setup {
   capabilities = capabilities,
+  settings = {
+    diagnostics = {
+      ignoredCodes = { 80006, },
+    },
+  },
 }
 
 lspconfig.basedpyright.setup {
