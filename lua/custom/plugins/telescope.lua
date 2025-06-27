@@ -1,8 +1,9 @@
 return {
   "nvim-telescope/telescope.nvim",
+  commit = "b4da76be54691e854d3e0e02c36b0245f945c2c7",
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "kkharji/sqlite.lua",
+    { "nvim-lua/plenary.nvim", commit = "857c5ac632080dba10aae49dba902ce3abf91b35" },
+    { "kkharji/sqlite.lua",    commit = "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   },
   config = function()
     local data = assert(vim.fn.stdpath "data") --[[@as string]]
