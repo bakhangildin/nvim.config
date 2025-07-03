@@ -10,20 +10,7 @@ return {
     "lewis6991/gitsigns.nvim",
     commit = "1b0350ab707713b2bc6c236151f1a324175347b1",
     config = function()
-      require("gitsigns").setup {
-        -- signs = {
-        --   add = { text = "+" },
-        --   change = { text = "~" },
-        --   delete = { text = "-" },
-        --   topdelete = { text = "‾" },
-        -- },
-        -- signs_staged = {
-        --   add = { text = "+" },
-        --   change = { text = "~" },
-        --   delete = { text = "-" },
-        --   topdelete = { text = "-" },
-        -- },
-      }
+      require("gitsigns").setup()
     end,
   },
 }
