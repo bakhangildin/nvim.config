@@ -1,3 +1,5 @@
+vim.cmd("colorscheme habamax")
+
 vim.g.mapleader = " "
 
 if true then

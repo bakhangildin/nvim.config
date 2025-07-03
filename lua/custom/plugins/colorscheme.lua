@@ -39,6 +39,7 @@ return {
     "blazkowolf/gruber-darker.nvim",
     commit = "a2dda61d9c1225e16951a51d6b89795b0ac35cd6",
     priority = 1000,
+    enabled = false,
     config = function()
       require("gruber-darker").setup({
         bold = false,
