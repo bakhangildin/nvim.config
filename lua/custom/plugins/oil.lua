@@ -2,9 +2,6 @@ return {
   {
     "stevearc/oil.nvim",
     tag = "v2.15.0",
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons", commit = "19d6211c78169e78bab372b585b6fb17ad974e82" },
-    },
     config = function()
       require("oil").setup {
         columns = { "icon" },
