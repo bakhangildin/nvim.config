@@ -1,6 +1,6 @@
 local cmd = "MakeTerminals"
 pcall(vim.api.nvim_del_user_command, cmd)
-vim.api.nvim_create_user_command("MakeTerminals", function(args)
+vim.api.nvim_create_user_command(cmd, function(args)
   local str = args.args
   if str == "" then
     str = "3"
