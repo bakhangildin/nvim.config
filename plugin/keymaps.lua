@@ -1,6 +1,6 @@
 local set = vim.keymap.set
 
-set("i", "jj", "<ESC>")
+-- set("i", "jj", "<ESC>")
 
 set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")
