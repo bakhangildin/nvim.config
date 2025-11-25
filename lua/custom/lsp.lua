@@ -4,6 +4,8 @@ require("mason").setup {}
 local conform = require("conform")
 conform.setup {
   formatters_by_ft = {
+    c = {},
+
     go = { "goimports" },
 
     templ = { "prettierd", "templ" },
