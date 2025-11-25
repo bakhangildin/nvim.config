@@ -2,7 +2,7 @@ vim.cmd("colorscheme habamax")
 
 vim.g.mapleader = " "
 
-if true then
+if false then
   local nvim_venv_path = "/home/hangildin/.pyenv/versions/nvim_venv"
   if vim.loop.fs_stat(nvim_venv_path) then
     vim.env.PYENV_VERSION = "nvim_venv"
