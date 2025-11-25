@@ -166,23 +166,23 @@ lspconfig.clangd.setup {
 }
 
 
-local configs = require("lspconfig.configs")
-local util = require("lspconfig.util")
-configs.protobuf_language_server = {
-  default_config = {
-    cmd = { "protobuf-language-server" },
-    filetypes = { "proto", "cpp" },
-    root_dir = util.root_pattern(".git"),
-    single_file_support = true,
-    settings = {
-      -- ["additional-proto-dirs"] = [
-      --     -- path to additional protobuf directories
-      --     -- "vendor",
-      --     -- "third_party",
-      -- ]
-    },
-  }
-}
-lspconfig.protobuf_language_server.setup {
-  capabilities = capabilities,
-}
+-- local configs = require("lspconfig.configs")
+-- local util = require("lspconfig.util")
+-- configs.protobuf_language_server = {
+--   default_config = {
+--     cmd = { "protobuf-language-server" },
+--     filetypes = { "proto", "cpp" },
+--     root_dir = util.root_pattern(".git"),
+--     single_file_support = true,
+--     settings = {
+--       -- ["additional-proto-dirs"] = [
+--       --     -- path to additional protobuf directories
+--       --     -- "vendor",
+--       --     -- "third_party",
+--       -- ]
+--     },
+--   }
+-- }
+-- lspconfig.protobuf_language_server.setup {
+--   capabilities = capabilities,
+-- }
