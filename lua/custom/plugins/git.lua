@@ -8,7 +8,7 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    commit = "7010000889bfb6c26065e0b0f7f1e6aa9163edd9",
+    commit = "17ab794b6fce6fce768430ebc925347e349e1d60",
     config = function()
       require("gitsigns").setup()
     end,
