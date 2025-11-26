@@ -4,6 +4,12 @@ return {
     commit = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
     config = function()
       vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+      local cmd = "Glog"
+      pcall(vim.api.nvim_del_user_command, cmd)
+      vim.api.nvim_create_user_command(cmd, function()
+        vim.cmd("G log --oneline --decorate=short")
+      end, {})
     end,
   },
   {
