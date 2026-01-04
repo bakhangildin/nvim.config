@@ -1,5 +1,5 @@
 require("neodev").setup {}
-require("mason").setup {}
+require("mason").setup({ ui = { check_outdated_packages_on_open = false } })
 
 local conform = require("conform")
 conform.setup {
