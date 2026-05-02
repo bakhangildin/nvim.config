@@ -4,6 +4,15 @@ vim.filetype.add({
   }
 })
 
+vim.filetype.add {
+  extension = {
+    jinja = 'jinja',
+    jinja2 = 'jinja',
+    j2 = 'jinja',
+    py = 'python'
+  },
+}
+
 local opt = vim.opt
 
 opt.tabstop = 4
