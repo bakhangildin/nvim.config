@@ -102,8 +102,6 @@ require("mason-tool-installer").setup {
     { "ols",                         version = "dev-2025-11" },
 
     { "arduino-language-server",     version = "0.7.7" },
-
-    { "jinja-lsp",                   version = "0.1.91" },
   },
   auto_update = false,
 }
@@ -190,9 +188,6 @@ lspconfig.arduino_language_server.setup {
   filetypes = { "arduino" },
 }
 
-lspconfig.jinja_lsp.setup {
-  capabilities = capabilities,
-}
 
 -- local configs = require("lspconfig.configs")
 -- local util = require("lspconfig.util")
