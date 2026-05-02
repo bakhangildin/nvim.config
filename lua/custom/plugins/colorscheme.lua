@@ -21,18 +21,21 @@ return {
     enabled = false,
     config = function()
       require("tokyonight").setup({
-        style = "night",
-        transparent = false,
-        terminal_colors = true,
+        style = "storm",
+        -- light_style = "dark",
+        transparent = true,
+        terminal_colors = false,
         styles = {
           comments = { italic = false },
           keywords = { italic = false },
         },
+        lualine_bold = true,
         on_colors = function(colors)
-          colors["bg"] = "#04051a"
+          colors["border"] = "white"
+          colors["fg_gutter"] = "#75798a"
         end
       })
-      -- vim.cmd([[colorscheme tokyonight]])
+      vim.cmd("colorscheme tokyonight")
     end,
   },
   {

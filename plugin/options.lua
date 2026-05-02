@@ -12,7 +12,10 @@ opt.smarttab = true
 opt.smartindent = true
 opt.expandtab = true
 
+opt.guicursor = "a:block"
+
 opt.list = true
+vim.cmd("set lcs=tab:>\\ ,trail:·,nbsp:+,space:·")
 opt.wrap = false
 opt.number = true
 opt.relativenumber = true

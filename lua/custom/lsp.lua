@@ -98,6 +98,10 @@ require("mason-tool-installer").setup {
     { "jsonls",                      version = "4.10.0" },
 
     { "clangd",                      version = "19.1.2" },
+
+    { "ols",                         version = "dev-2025-11" },
+
+    { "arduino-language-server",     version = "0.7.7" },
   },
   auto_update = false,
 }
@@ -105,6 +109,8 @@ require("mason-tool-installer").setup {
 local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.semanticTokens = nil
+capabilities.workspace.semanticTokens = nil
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
@@ -165,6 +171,21 @@ lspconfig.jsonls.setup {
 lspconfig.clangd.setup {
   capabilities = capabilities,
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+}
+
+lspconfig.ols.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.arduino_language_server.setup {
+  capabilities = capabilities,
+  cmd = {
+    "arduino-language-server",
+    -- "-cli", "/opt/homebrew/bin/arduino-cli",
+    "-fqbn", "arduino:renesas_uno:unor4wifi",
+    "-cli-config", vim.fn.expand "~/Library/Arduino15/arduino-cli.yaml",
+  },
+  filetypes = { "arduino" },
 }
 
 

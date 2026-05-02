@@ -46,9 +46,11 @@ set("n", "<leader>bd", function()
   end
 end)
 
+local group = vim.api.nvim_create_augroup("MyGroup", {})
+
 -- Terminal setup
 vim.api.nvim_create_autocmd("TermOpen", {
-  group = vim.api.nvim_create_augroup("custom-term-open", {}),
+  group = group,
   callback = function()
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
@@ -56,6 +58,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.bo.filetype = "terminal"
   end,
 })
+
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   group = group,
+--   pattern = "*",
+--   command = [[%s/\s\+$//e]],
+-- })
 
 set("t", "<esc><esc>", "<c-\\><c-n>")
 set("t", "jj", "<c-\\><c-n>")
