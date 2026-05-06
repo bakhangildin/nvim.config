@@ -156,6 +156,15 @@ lspconfig.ts_ls.setup {
 
 lspconfig.basedpyright.setup {
   capabilities = capabilities,
+  settings = {
+    basedpyright = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "workspace",
+      },
+    },
+  },
 }
 
 lspconfig.jsonls.setup {
